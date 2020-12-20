@@ -1,0 +1,90 @@
+html, button, input, select, textarea, .pure-g [class *="pure-u"] {
+    font-family: Helvetica, Arial, sans-serif !important
+}
+
+body {
+    background-color: #f5f6f9
+}
+
+div {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.counter-wrapper {
+    position: fixed;
+    top: 50%;
+    /*bottom: 0;*/
+    left: 50%;
+    /*right: 0;*/
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    white-space: nowrap
+}
+
+#name {
+    display: block;
+    margin: 0
+}
+
+.counter_part {
+    display: inline-block;
+    height: 50%;
+    white-space: nowrap;
+    padding: 2vw;
+    /*padding-right: 2vw;*/
+}
+
+.colon {
+    display: none
+}
+
+.unit_value, .unit_name, #counter, #name {
+    white-space: nowrap;
+    text-align: center;
+    padding: 2vw;
+}
+
+.counter-wrapper:link, .counter-wrapper:hover, .counter-wrapper:active {
+    text-decoration: none
+}
+
+#value-wrapper {
+    height: 100%
+}
+
+.unit_value {
+    color: black;
+    font-size: 4vw;
+    letter-spacing: 0.1vw;
+    line-height: 5vw;
+}
+
+
+.unit_name {
+    color: black;
+}
+
+#minus_sign {
+    display: none
+}
+
+#alarm {
+    display: none
+}
+
+.title {
+    color: #7c795d;
+    font-family: 'Trocchi', serif;
+    font-size: 10vw;
+    font-weight: normal;
+    letter-spacing: 0.1vw;
+    margin: 0;
+}
