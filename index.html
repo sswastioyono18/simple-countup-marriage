@@ -1,0 +1,228 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+        window.onload = function () {
+            // Month Day, Year Hour:Minute:Second, id-of-element-container
+            countUpFromTime("Dec 12, 2020 15:30:00", 'countup1'); // ****** Change this line!
+        };
+
+        function countUpFromTime(countFrom, id) {
+            countFrom = new Date(countFrom).getTime();
+            var now = new Date(),
+                countFrom = new Date(countFrom),
+                timeDifference = (now - countFrom);
+
+            var secondsInADay = 60 * 60 * 1000 * 24,
+                secondsInAHour = 60 * 60 * 1000;
+
+            days = Math.floor(timeDifference / (secondsInADay) * 1);
+            years = Math.floor(days / 365);
+            if (years > 1) {
+                days = days - (years * 365)
+            }
+            hours = Math.floor((timeDifference % (secondsInADay)) / (secondsInAHour) * 1);
+            mins = Math.floor(((timeDifference % (secondsInADay)) % (secondsInAHour)) / (60 * 1000));
+            secs = Math.floor((((timeDifference % (secondsInADay)) % (secondsInAHour)) % (60 * 1000)) / 1000);
+
+            var idEl = document.getElementById(id);
+            // idEl.getElementsByClassName('years')[0].innerHTML = years;
+            idEl.getElementsByClassName('days')[0].innerHTML = days;
+            idEl.getElementsByClassName('hours')[0].innerHTML = hours;
+            idEl.getElementsByClassName('minutes')[0].innerHTML = mins;
+            idEl.getElementsByClassName('seconds')[0].innerHTML = secs;
+
+            clearTimeout(countUpFromTime.interval);
+            countUpFromTime.interval = setTimeout(function () {
+                countUpFromTime(countFrom, id);
+            }, 1000);
+        }
+    </script>
+    <html>
+    <!-- <script src="chrome-extension://ljdobmomdgdljniojadhoplhkpialdid/page/prompt.js"></script> -->
+    <!-- <script src="chrome-extension://ljdobmomdgdljniojadhoplhkpialdid/page/runScript.js"></script> -->
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Count Up Timer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./index_files/pure-min.css">
+    <link rel="stylesheet" href="./index_files/grids-responsive-min.css">
+
+    <!-- <link href="./index_files/select2.min.css" rel="stylesheet"> -->
+    <!-- <link href="./index_files/jquery.datepick.min.css" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="./index_files/output.3c1e68d92df6.css" type="text/css">
+
+    <style id="dark-reader-style" type="text/css">
+        @media screen {
+
+            /* Leading rule */
+            html {
+                -webkit-filter: invert(100%) hue-rotate(180deg) !important;
+            }
+
+            /* Contrary rule */
+            img,
+            video,
+            :not(object):not(body) > embed,
+            object,
+            iframe,
+            svg image,
+            [style*='background:url'],
+            [style*='background-image:url'],
+            [style*='background: url'],
+            [style*='background-image: url'],
+            [background],
+            twitterwidget {
+                -webkit-filter: invert(100%) hue-rotate(180deg) !important;
+            }
+
+            [style*='background:url'] *,
+            [style*='background-image:url'] *,
+            [style*='background: url'] *,
+            [style*='background-image: url'] *,
+            input,
+            [background] * {
+                -webkit-filter: none !important;
+            }
+
+            iframe:not([title='Disqus']):not([src*='ihlenndgcmojhcghmfjfneahoeklbjjh']) {
+                background: white !important;
+            }
+
+            /* Text contrast */
+            html {
+                text-shadow: 0 0 0 !important;
+            }
+
+            /* Full screen */
+            *:-webkit-full-screen,
+            *:-webkit-full-screen * {
+                -webkit-filter: none !important;
+            }
+
+            /* Page background */
+            html {
+                background: rgb(0, 0, 0) !important;
+            }
+
+            /* Custom rules */
+            #disqus_thread > :first-child {
+                background: black !important;
+            }
+
+        }
+    </style>
+    </head>
+
+    <title></title>
+    <title></title>
+<body>
+<div class="pure-g counter-wrapper">
+    <h1 id="name" class="pure-u-1">
+        Nadya & Tio have been together for</h1>
+
+    <div id="countup1" class="pure-u-1">
+
+        <!-- <div id="minus_sign" class="counter_part colon" style="display: none;">
+            <div class="unit_value">-</div>
+            <div class="unit_name">&nbsp;</div>
+        </div>
+
+        <div class="counter_part" id="year_wrapper" style="font-size: 176px; line-height: 201.453px;">
+            <div class="unit_value timeel years" id="year" style="font-size: 176px; line-height: 201.453px;">.</div>
+
+            <div class="unit_name timeel" style="font-size: 30px; line-height: 50.3594px;">YEARS</div>
+        </div>
+
+        <div class="counter_part colon" id="colon_year" style="display: inline-block;">
+            <div class="unit_value" style="font-size: 176px; line-height: 201.453px;">:</div>
+            <div class="unit_name" style="font-size: 30px; line-height: 50.3594px;">&nbsp;</div>
+        </div>
+
+        <div class="counter_part" id="month_wrapper" style="font-size: 176px; line-height: 201.453px;">
+            <div class="unit_value timeel months" id="month" style="font-size: 176px; line-height: 201.453px;">0</div>
+            <div class="unit_name timeel" style="font-size: 30px; line-height: 50.3594px;">MONTHS</div>
+        </div>
+
+        <div class="counter_part colon" id="colon_month" style="display: inline-block;">
+            <div class="unit_value" style="font-size: 176px; line-height: 201.453px;">:</div>
+            <div class="unit_name" style="font-size: 30px; line-height: 50.3594px;">&nbsp;</div>
+        </div>
+
+        <div class="counter_part" id="week_wrapper">
+            <div class="unit_value timeel weeks" id="week" style="font-size: 176px; line-height: 201.453px;">0</div>
+            <div class="unit_name" style="font-size: 30px; line-height: 50.3594px;">WEEKS</div>
+        </div>
+
+        <div class="counter_part colon" id="colon_week" style="display: inline-block;">
+            <div class="unit_value" style="font-size: 176px; line-height: 201.453px;">:</div>
+            <div class="unit_name" style="font-size: 30px; line-height: 50.3594px;">&nbsp;</div>
+        </div> -->
+
+        <div class="counter_part" id="day_wrapper">
+            <div class="unit_value days" id="day"> 7 </div>
+            <div class="unit_name">DAYS
+            </div>
+        </div>
+
+        <div class="counter_part colon" id="colon_day">
+            <div class="unit_value">:
+            </div>
+            <div class="unit_name">
+                &nbsp;
+            </div>
+        </div>
+
+        <div class="counter_part" id="hour_wrapper">
+            <div class="unit_value hours" id="hour"> 04 
+            </div>
+            <div class="unit_name">
+                HOURS
+            </div>
+        </div>
+
+        <div class="counter_part colon" id="colon_hour">
+            <div class="unit_value">:
+            </div>
+            <div class="unit_name">
+                &nbsp;
+            </div>
+        </div>
+
+        <div class="counter_part" id="minute_wrapper">
+            <div class="unit_value minutes" id="minute">
+                 48 
+            </div>
+            <div class="unit_name">
+                MINUTES
+            </div>
+        </div>
+
+        <div class="counter_part colon" id="colon_minute">
+            <div class="unit_value">:
+            </div>
+            <div class="unit_name">
+                &nbsp;
+            </div>
+        </div>
+
+        <div class="counter_part" id="second_wrapper">
+            <div class="unit_value seconds" id="second">
+                 32 
+            </div>
+            <div class="unit_name">
+                SECONDS
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
