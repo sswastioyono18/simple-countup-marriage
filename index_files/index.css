@@ -36,10 +36,9 @@ div {
 
 .counter_part {
     display: inline-block;
-    height: 50%;
+    height: 100%;
     white-space: nowrap;
     padding: 2vw;
-    /*padding-right: 2vw;*/
 }
 
 .colon {
@@ -48,6 +47,7 @@ div {
 
 .unit_value, .unit_name, #counter, #name {
     white-space: nowrap;
+    font-size: 2vw;
     text-align: center;
     padding: 2vw;
 }
@@ -62,7 +62,7 @@ div {
 
 .unit_value {
     color: black;
-    font-size: 4vw;
+    font-size: 5vw;
     letter-spacing: 0.1vw;
     line-height: 5vw;
 }
